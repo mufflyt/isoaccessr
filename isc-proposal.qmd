@@ -1,26 +1,20 @@
-  ---
-  title: "IsoAccessR: A Lightweight R Package for Reproducible Accessibility
-  Analysis"
-  author:
-    - name: Tyler Muffly, MD
-      orcid: 0000-0002-2044-1693
-      affiliations:
-        - "Denver Health and Hospital Authority"
-        - "University of Colorado School of Medicine"
-
-  date: today
-  date-format: iso
-  format:
-    html:
-      embed-resources: true
-    hikmah-pdf:
-      geometry:
-        - left=1.25in
-        - right=1.25in
-  bibliography: references.bib
+---
+title: "IsoAccessR: A Lightweight R Package for Reproducible Accessibility Analysis"
+author:
+  - name: Tyler Muffly, MD
+    orcid: 0000-0002-2044-1693
+    affiliations:
+      - "Denver Health and Hospital Authority"
+      - "University of Colorado School of Medicine"
+date: today
+date-format: iso
+format:
+  pdf:
+    toc: true
+    number-sections: true
+bibliography: references.bib
 ---
 
-_This template was last revised on 2026-03-24._
 
 
 {{< include proposal/00-exec-summary.qmd >}}

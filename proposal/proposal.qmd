@@ -1,0 +1,10 @@
+---
+title: "IsoAccessR: A Lightweight R Package for Reproducible Accessibility Analysis"
+author: "Tyler Muffly, MD"
+format: pdf
+bibliography: proposal/references.bib
+---
+
+```{r}
+#| echo: false
+# (No code needed, just ensures chunk engine loads cleanly)
