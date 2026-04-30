@@ -1,7 +1,5 @@
 # isc-proposal
 
-[![build-status](https://github.com/mufflyt/isoacessr/actions/workflows/publish-proposal.yaml/badge.svg)](https://github.com/mufflyt/isoacessr/actions/workflows/publish-proposal.yaml)
-
 # IsoAccessR
 
 IsoAccessR is a lightweight R package for reproducible geographic
@@ -56,8 +54,4 @@ IsoAccessR is designed to work with:
 
 ## Status
 
-Early proposal-stage repository.d under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/RConsortium/isc-
-                                                                                                                                                                                                    
-                                                                                                                                                                                                    
-                                                                                                                                                                                                
-                                                                                                                                                                                          proposal" rel="dct:source">https://github.com/RConsortium/isc-proposal</a>.
+Early proposal-stage repository.
