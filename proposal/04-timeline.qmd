@@ -1,60 +1,142 @@
 # Project plan
 
 ## Start-up phase
-<!--
-Covering the planning phase, this section should provide a relatively
-detailed plan of how work will start on the project. This section is
-important because projects need to get up and running quickly.
 
+The project will begin with rapid setup to ensure development can proceed immediately and transparently.
 
- - [ ] Setting up collaboration platform inc. code for contributors etc.
- - [ ] License decisions
- - [ ] Reporting framework
--->
+- **Collaboration platform**
+  - Create a public GitHub repository (`isoaccessr`)
+  - Initialize package structure using `usethis`
+  - Enable issue tracking and GitHub Discussions for community feedback
+  - Set up continuous integration (GitHub Actions) for automated testing
 
+- **License decisions**
+  - Use an open-source MIT License to maximize adoption and reuse
+  - Ensure all dependencies are compatible with permissive licensing
+
+- **Reporting framework**
+  - Track progress through GitHub milestones aligned with proposal phases
+  - Provide regular updates via GitHub issues and commit history
+  - Prepare short written updates aligned with ISC reporting expectations
+
+This phase will be completed within **Month 1**.
+
+---
 
 ## Technical delivery
-<!--
-Covering the actual delivery of the project this section should
-provide at least a high-level description of the implementation.
 
-Including target dates is really important as you need to be committed
-and the ISC need to have a means of tracking delivery
--->
+The project will be delivered over a four-month timeline with clearly defined milestones:
+
+### Month 1: Design and setup
+- Finalize API design for core functions
+- Create package skeleton (DESCRIPTION, NAMESPACE, tests, CI)
+- Identify and prepare example dataset
+
+**Deliverables:**
+- Public repository with working package scaffold
+- Initial function interfaces defined
+
+---
+
+### Months 2–3: Core implementation
+- Implement `iso_estimate_access()`:
+  - spatial intersection
+  - area-weighted population estimation
+- Implement `iso_summarize_access()`:
+  - aggregation across geographies
+- Develop reproducible vignette demonstrating full workflow
+- Add unit tests using `testthat`
+
+**Deliverables:**
+- Functional core package with two working functions
+- Passing test suite
+- Draft vignette
+
+---
+
+### Month 4: Refinement and release
+- Improve documentation and error handling
+- Finalize pkgdown documentation site
+- Incorporate feedback from early users
+- Prepare tagged release (v0.1.0)
+
+**Deliverables:**
+- Publicly usable R package
+- Complete vignette and documentation
+- Stable release candidate
+
+---
+
+### Risk and mitigation
+
+- **Risk:** Spatial edge cases (invalid geometries, CRS mismatch)  
+  **Mitigation:** Use `sf` validation tools and document required input assumptions clearly  
+
+- **Risk:** Scope creep  
+  **Mitigation:** Strict adherence to MVP (two functions only)  
+
+- **Risk:** Limited user feedback during development  
+  **Mitigation:** Early GitHub visibility and outreach to spatial R users  
+
+---
 
 ## Other aspects
 
-<!--
-How will you ensure that your work is available to the widest number
-of people? Please specify the open-source or creative commons license(s)
-you will use, how you will host your code so that others can contribute,
-and how you will publicize your work. We encourage you to plan content
-to be shared quarterly on the R Consortium blog.
+To maximize reach and community adoption:
 
- - [ ] Announcement post
- - [ ] Delivery blog post
- - [ ] Social media
- - [ ] UseR!
- - [ ] ISC meetings
--->
+- **Open-source licensing**
+  - MIT License to encourage reuse and contribution
+
+- **Code hosting**
+  - GitHub repository with open issues and contribution guidelines
+
+- **Dissemination plan**
+  - Announcement post (R Consortium blog or personal blog)
+  - Delivery blog post demonstrating the vignette workflow
+  - Social media sharing (R community, Twitter/X, LinkedIn)
+  - Potential presentation at useR! or local R user groups
+  - Engagement with ISC community where appropriate
+
+- **Documentation**
+  - pkgdown site for user-friendly documentation
+  - reproducible vignette as primary onboarding tool
+
+---
 
 ## Budget & funding plan
 
-<!--
-Note that the maximum grant is $20k USD. The proposal should be in USD.
+**Total requested: $8,000 USD**
 
-Outline the milestones for development and how much funding will be
-required for each stage (as payments will be tied to project milestone
-completion). This also helps the ISC in the event of partial funding. 
-Each milestone should specify the work to be done and the
-expected outcomes, providing enough detail for the ISC to understand
-the scope of the project work and assess the likelihood of success.
+The budget is structured around milestone-based delivery:
 
-We expect that most of the budget will be allocated
-for labor costs. We do not cover indirect costs. The ISC grants cannot
-cover such things as travel, lodging, food, journal publication fees,
-or personal hardware. Cloud services may be covered if they are specific
-to the project and the project period. The ISC reserves the right to vet
-how funds are used for each project separately. If in doubt, please reach
-out to us.
--->
+### Milestone 1: Project setup and design — $2,000
+- Repository creation and package scaffolding
+- API design and planning
+- Example dataset preparation
+
+**Outcome:**
+- Public repo with working structure and defined API
+
+---
+
+### Milestone 2: Core implementation — $4,000
+- Development of `iso_estimate_access()`
+- Development of `iso_summarize_access()`
+- Initial vignette and test suite
+
+**Outcome:**
+- Functional package with core capabilities
+
+---
+
+### Milestone 3: Documentation and release — $2,000
+- Final vignette and pkgdown site
+- Documentation and error handling improvements
+- Final release (v0.1.0)
+
+**Outcome:**
+- Publicly usable package with documentation
+
+---
+
+The majority of funds are allocated to development time. No funds are requested for travel, hardware, or indirect costs. The scope is intentionally constrained to ensure successful delivery within the proposed budget and timeline.

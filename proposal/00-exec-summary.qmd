@@ -1,6 +1,17 @@
 # Executive Summary
 
-<!--
-This section provides a condensed view of the entire proposal, one page long.
-It should be a comprehensive high-level overview that captures the essence of the proposal, including its goals, methods, expected outcomes, deliverables, and budget.
--->
+IsoAccessR is a lightweight R package designed to standardize and simplify geographic accessibility analysis. The project addresses a common and recurring challenge across domains such as healthcare, public health, transportation, and policy: estimating population access to services using travel-time service areas.
+
+Currently, analysts must manually implement area-weighted overlays to estimate population coverage from service-area polygons. This process is technically complex, error-prone, and frequently reimplemented across projects, leading to inconsistent methods and limited reproducibility. While the R ecosystem provides strong foundational spatial tools, there is no focused, reusable package that standardizes this workflow.
+
+IsoAccessR will fill this gap by providing a minimal, well-defined interface for accessibility analysis. The package will enable users to combine service-area geometries with population data to produce analysis-ready summaries with minimal custom spatial code. The design emphasizes simplicity, transparency, and interoperability with the modern R spatial ecosystem, particularly `sf` and tidyverse workflows.
+
+The proposed minimum viable product (MVP) focuses on a single, high-value workflow and will include two core functions: `iso_estimate_access()` for calculating population access using area-weighted overlays, and `iso_summarize_access()` for aggregating results across geographies. The package will also include an example dataset, a reproducible end-to-end vignette, and automated testing with continuous integration.
+
+The project builds on prior internal work that has successfully implemented accessibility estimation across multiple geographies and time periods, reducing technical risk and ensuring feasibility. Development will occur over a four-month timeline, including design, implementation, documentation, and refinement phases.
+
+Expected outcomes include a publicly available open-source R package, a pkgdown documentation site, and reproducible workflows that can be used and extended by analysts across multiple disciplines. By reducing the need for bespoke spatial pipelines, IsoAccessR will improve reproducibility, consistency, and efficiency in accessibility analysis.
+
+The total requested budget is $8,000 USD, allocated across development, documentation, testing, and community feedback. This budget aligns with prior R Consortium Infrastructure Steering Committee grants for focused package development.
+
+IsoAccessR represents a small but impactful addition to the R ecosystem, providing a standardized, reusable tool for a widely needed analytical task.

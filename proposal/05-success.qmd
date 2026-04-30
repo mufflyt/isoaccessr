@@ -1,22 +1,73 @@
 # Success
-<!--
-Projects should have a definition of done that is measurable, and a
-thorough understanding going in of what the risks are to delivery
--->
 
 ## Definition of done
-<!--
-What does success look like?
--->
+
+The project will be considered complete when the following deliverables are met:
+
+1. **Public R package available**
+   - IsoAccessR is hosted in a public GitHub repository
+   - Package is installable via `devtools::install_github()`
+
+2. **Core functionality implemented**
+   - `iso_estimate_access()` correctly performs area-weighted accessibility estimation  
+   - `iso_summarize_access()` aggregates results across geographies  
+
+3. **Reproducible workflow provided**
+   - A complete vignette demonstrates end-to-end usage with example data  
+   - The vignette runs successfully in a clean environment  
+
+4. **Testing and reliability**
+   - Unit tests are implemented using `testthat`  
+   - Continuous integration (CI) passes consistently  
+
+5. **Documentation and usability**
+   - Function documentation is complete and clear  
+   - A pkgdown site is available for user-friendly access  
+
+6. **Release milestone**
+   - A tagged release (v0.1.0) is published  
+
+---
 
 ## Measuring success
-<!--
-How will we know when success is achieved, what markers can we use
-along the way
--->
+
+Progress and success will be evaluated using the following indicators:
+
+- **Milestone completion**
+  - Completion of setup, implementation, and release phases on schedule  
+
+- **Technical validation**
+  - Successful execution of vignette on a clean system  
+  - Passing CI checks and test suite  
+
+- **Adoption signals**
+  - GitHub activity (stars, forks, issues)  
+  - Initial feedback from users in the R spatial and applied analytics communities  
+
+- **Reduction in custom workflows**
+  - Evidence that users can perform accessibility analysis with minimal custom spatial code  
+
+These measures provide both short-term delivery validation and early indicators of community value.
+
+---
 
 ## Future work
-<!--
-How could this be extended / developed in the future by yourself
-and/or the community in general?
--->
+
+IsoAccessR is intentionally scoped as a minimal package, but it provides a foundation for future extensions. Potential directions include:
+
+- **Expanded accessibility metrics**
+  - support for additional methods such as gravity models or floating catchment approaches  
+
+- **Enhanced validation tools**
+  - automated checks for geometry validity, CRS alignment, and completeness  
+
+- **Integration with routing tools**
+  - optional interfaces to generate service-area polygons directly  
+
+- **Benchmarking and comparison tools**
+  - standardized datasets for comparing accessibility methods  
+
+- **CRAN submission**
+  - after stabilization and broader testing, prepare for CRAN release  
+
+Future development may be led by the project team or extended by the broader R community through open-source contributions.

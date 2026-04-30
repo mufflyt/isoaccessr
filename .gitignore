@@ -19,3 +19,5 @@ vignettes/*.pdf
 
 /.quarto/
 .positai
+
+**/*.quarto_ipynb

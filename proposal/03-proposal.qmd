@@ -1,50 +1,89 @@
 # The proposal
-<!--
-How are you going to solve the problem? Include the concrete actions you
-will take and an estimated timeline. What are likely failure modes and
-how will you recover from them?
 
-This is where the proposal should be outlined.
--->
+IsoAccessR will address the lack of a standardized accessibility workflow by delivering a lightweight R package focused on estimating population access from service-area polygons using area-weighted overlays. The project will translate a commonly reimplemented but error-prone spatial workflow into a simple, reusable interface that integrates cleanly with the existing R spatial ecosystem.
+
+The proposal focuses on a minimal, high-impact solution rather than a full platform. By standardizing a single core workflow, IsoAccessR will reduce duplicated effort, improve reproducibility, and lower the barrier for analysts who need to perform accessibility analysis without building custom spatial pipelines.
+
+Development will proceed over a four-month period, with clear milestones for design, implementation, documentation, and refinement. The result will be a publicly available R package with a small, well-defined API, a reproducible vignette, and automated tests.
 
 ## Overview
-<!--
-At a high-level address what your proposal is and how it will address
-the problem identified. Highlight any benefits to the R Community that
-follow from solving the problem. This should be your most compelling
-section.
 
-Include concrete actions you will take and estimated timeline.
--->
+IsoAccessR will provide a compact interface for a widely needed task: estimating how many people can access a service within a defined travel time. It will do so by combining service-area polygons with population geometries using area-weighted overlays and returning tidy, analysis-ready outputs.
+
+This proposal addresses the problem of fragmented and inconsistent accessibility workflows by introducing a focused abstraction layer above existing spatial tools such as `sf`. Rather than replacing these tools, IsoAccessR will make them easier to use for a specific analytical purpose.
+
+Concrete actions include:
+- designing a minimal API for accessibility estimation  
+- implementing core spatial overlay and aggregation functions  
+- creating a reproducible end-to-end vignette  
+- developing automated tests and continuous integration  
+- building a pkgdown documentation site  
+
+Estimated timeline:
+- Month 1: API design, package setup, example data  
+- Months 2–3: implementation of core functions and vignette  
+- Month 4: documentation, testing, refinement, and release  
+
+Benefits to the R community include:
+- a reusable solution for a commonly reimplemented workflow  
+- improved reproducibility and consistency across accessibility analyses  
+- a lower barrier to entry for analysts using spatial data  
 
 ## Detail
-<!--
-Go into more detail about the specifics of the project and how it delivers
-against the problem.
 
-Depending on project type the detail section should include:
--->
+IsoAccessR focuses on a single, high-value workflow: estimating population access from service areas. The package will encapsulate the key steps—overlay, weighting, and aggregation—into a minimal set of functions, reducing the need for custom spatial code.
 
 ### Minimum Viable Product
 
-<!--
-What is the smallest thing you can build that delivers value to your users?
--->
+The MVP will include:
+
+- `iso_estimate_access()`  
+  Computes population access using area-weighted overlays between service-area polygons and population geometries  
+
+- `iso_summarize_access()`  
+  Aggregates access estimates across user-defined geographies  
+
+- one example dataset  
+- one reproducible end-to-end vignette  
+- automated tests and continuous integration  
+
+This MVP is intentionally scoped to deliver immediate value while remaining feasible within the project timeline.
 
 ### Architecture
 
-<!--
-What does the high-level architecture look like?
--->
+The package will follow a simple and transparent structure:
+
+- **Inputs:**  
+  - service-area polygons (`sf` objects)  
+  - population geometries with counts  
+
+- **Processing:**  
+  - spatial intersection  
+  - area-weighted calculation of population coverage  
+  - aggregation across geographies  
+
+- **Outputs:**  
+  - tidy tabular summaries compatible with tidyverse workflows  
+
+This design avoids unnecessary abstraction while ensuring interoperability with existing spatial tools.
 
 ### Assumptions
 
-<!--
-What assumptions are you making that, if proven false, would invalidate the project?
--->
+The project assumes:
+
+- users already have access to service-area (travel-time) polygons  
+- spatial geometries are valid and share a common coordinate reference system  
+- population data is available at a defined geographic level  
+
+If these assumptions are violated, results may be invalid; however, these constraints are standard in spatial analysis workflows and consistent with existing tools.
 
 ### External dependencies
 
-<!--
-What external dependencies does the project have (e.g. libraries, services, other projects, etc.)?
--->
+IsoAccessR will build on established R packages:
+
+- `sf` for spatial data operations  
+- `dplyr` for data manipulation  
+- `testthat` for testing  
+- `pkgdown` for documentation  
+
+These dependencies are widely used, stable, and well-supported within the R ecosystem, minimizing risk and ensuring long-term compatibility.

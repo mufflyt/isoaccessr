@@ -4,21 +4,16 @@ bibliography: references.bib
 
 # The Problem
 
-```{=html}
-<!--
-Outlining the issue / weak point / problem to be solved by this
-proposal. This should be a compelling section that sets the reader up
-for the next section - the proposed solution!
+Geographic accessibility analysis is a common task across healthcare, public health, transportation, and policy. Analysts frequently need to estimate how many people can reach a service within a defined travel time, using service-area polygons (e.g., isochrones) and population data. Despite its importance, there is no lightweight, standardized R package that supports this workflow from spatial inputs to analysis-ready summaries.
 
-It is important to cover:
+This problem affects a broad group of R users, including health services researchers, epidemiologists, policy analysts, and data scientists. Many of these users are proficient in R but do not have deep expertise in spatial data engineering. As a result, they must assemble custom workflows using lower-level spatial tools to perform overlay operations, area-weighted interpolation, and aggregation. These steps are technically complex and often repeated across projects.
 
- - [ ] What the problem is
- - [ ] Who it affects
- - [ ] Why is it a problem
- - [ ] What will solving the problem enable (why should it be solved)
- - [ ] Brief summary of existing work and previous attempts (e.g., relevant R packages)
- - [ ] If proposing changes to R itself: letter of support from R Core member
--->
-```
+A central challenge is estimating population coverage from service areas. This typically requires implementing area-weighted overlays between service polygons and population geometries (e.g., census tracts). In practice, this process is error-prone, sensitive to methodological assumptions, and rarely implemented in a consistent or reusable way. Small differences in implementation—such as how overlaps are calculated or aggregated—can lead to materially different results, reducing comparability across studies.
 
-An example in-text citation [@wickham2016].
+The consequences are fragmented workflows, limited reproducibility, and high setup costs for new analyses. Even within the R ecosystem, users must rely on combinations of powerful but low-level packages such as `sf` for spatial operations and `dplyr` for data manipulation. While these tools are essential, they do not provide a cohesive, opinionated interface for accessibility analysis. Analysts therefore reimplement similar logic repeatedly, increasing the likelihood of errors and reducing efficiency.
+
+Solving this problem would enable a standardized, reproducible approach to accessibility analysis in R. A focused package that encapsulates core operations—such as area-weighted estimation and aggregation—would reduce the need for bespoke code, improve consistency across analyses, and lower the barrier to entry for non-specialist users. It would also facilitate more transparent and auditable workflows, which are particularly important in policy-relevant applications.
+
+Existing work in the R ecosystem provides strong foundations but does not directly address this gap.[@pebesma2018] Packages such as `sf` provide robust spatial data structures and operations, and the tidyverse enables flexible data manipulation workflows [@wickham2016]. Other packages support related tasks such as data access or mapping, but none offer a minimal, dedicated interface for estimating population access from service areas. As a result, accessibility analysis remains a repeated, custom-built solution rather than a standardized workflow.
+
+IsoAccessR is designed to address this gap by providing a lightweight, reusable layer for accessibility analysis that builds on existing tools while standardizing a widely needed analytical task.
