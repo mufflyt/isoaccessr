@@ -1,32 +1,40 @@
 # Signatories
-<!--
-This section provides the ISC with a view of the support received from
-the community for a proposal. Acceptance isn't predicated on
-popularity but community acceptance is important. Willingness to
-accept outside input is also a good marker for project delivery.
-
-An optional section would be for R-Core signatories where changes to R
-are proposed.
--->
 
 ## Project team
-<!--
-Who are the people responsible for actually delivering the project if
-the proposal gets accepted and are already signed up and rearing to
-go? Briefly describe all participants and the skills they will bring
-to the project.
--->
+
+**Tyler Muffly, MD**  
+Project Lead and Developer  
+Denver, Colorado, USA  
+
+Dr. Muffly is a urogynecologist and applied health services researcher with extensive experience developing reproducible data pipelines in R for large-scale geographic and healthcare access analyses. He has built and maintained end-to-end workflows integrating spatial data, population estimates, and longitudinal analyses, including production pipelines for accessibility estimation across multiple geographies and time periods.
+
+For this project, he will be responsible for:
+- overall project direction and scope management  
+- API design and implementation  
+- development of core package functionality  
+- documentation, vignette creation, and user-facing examples  
+
+**Kyle Walker, PhD**  
+Advisor (Spatial Analysis and R Spatial Ecosystem)  
+
+Dr. Walker is an expert in spatial analysis and geographic data science in R, with widely used contributions to the R spatial ecosystem. He will serve in an advisory role, providing guidance on:
+- areal interpolation and spatial aggregation methods  
+- alignment with established `sf`-based workflows  
+- API design for usability and consistency within the R ecosystem  
+
+---
 
 ## Contributors
-<!--
-Who are the people who have actively helped with this proposal but
-won't necessarily be on the core project team later?
--->
+
+Early feedback on the proposal has been informed by colleagues and collaborators working in health services research and applied spatial analysis who routinely implement accessibility workflows. Their input helped refine the scope toward a minimal, high-impact package design and emphasized the importance of reducing repeated custom implementations of area-weighted overlays.
+
+---
 
 ## Consulted
-<!--
-Who has been given the opportunity to provide feedback on the
-proposal? This should include any R Consortium & ISC members who the
-proposal has been discussed with.
--->
 
+The proposal has been shaped by informal consultation with members of the R spatial and applied analytics communities, including users of `sf` and tidyverse-based workflows. Feedback has focused on ensuring that the proposed package:
+- remains lightweight and focused  
+- integrates cleanly with existing R spatial tools  
+- addresses a clearly defined and widely encountered pain point  
+
+The project is designed to remain open to ongoing community input via GitHub, with plans to incorporate feedback during development to ensure usability and alignment with community needs.
